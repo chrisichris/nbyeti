@@ -1,0 +1,230 @@
+
+/*
+ * Copyright 2011 Christian Essl
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+
+options {
+  JAVA_UNICODE_ESCAPE = true;
+  ERROR_REPORTING = false;
+  STATIC = false;
+  JDK_VERSION = "1.5";
+  BUILD_PARSER = false;
+}
+
+PARSER_BEGIN(YetiParser)
+
+package org.nbyeti.jcclexer;
+
+import java.io.*;
+
+/**
+ * Grammar to parse Yeti
+ * @author Christian Essl
+ */
+public class YetiParser
+{
+
+}
+
+PARSER_END(YetiParser)
+
+/* WHITE SPACE */
+
+<DEFAULT>
+TOKEN :
+{
+  < WHITESPACE: " "
+| "\t"
+| "\n"
+| "\r"
+| "\f">
+}
+
+/* COMMENTS */
+
+
+<DEFAULT>
+TOKEN :
+{
+  < SINGLE_LINE_COMMENT: "//" (~["\n", "\r"])* ("\n" | "\r" | "\r\n")?>
+}
+
+
+/* RESERVED WORDS YETI AND JAVA*/
+
+<DEFAULT>
+TOKEN :
+{
+  < VAR: "var" >
+
+| < LOOP: "loop" >
+
+| < CASE: "case" >
+| < ESAC: "esac" >
+| < OF: "of" >
+
+| < TRY: "try" >
+| < THROW: "throw" >
+| < CATCH: "catch" >
+| < FINALLY: "finally" >
+| < YRT: "yrt" >
+
+| < DO: "do" >
+| < DONE: "done" >
+
+| < IF: "if" >
+| < FI: "fi" >
+| < ELSE: "else" >
+| < ELIF: "elif" >
+| < THEN: "then" >
+
+| < IS: "is" >
+| < AS: "as" >
+| < UNSAFELY_AS: "unsafely_as" >
+| < INSTANCEOF: "instanceof" >
+
+| < NEW: "new" >
+| < WITH: "with" >
+| < TYPEDESC: "typedesc" >
+| < SYNCHRONIZED: "synchronized" >
+}
+
+
+/* RESERVED WORDS*/
+
+<DEFAULT>
+TOKEN :
+{
+
+  < IMPORT: "import" >
+| < MODULE: "module" >
+
+| < CLASS: "class" >
+| < ABSTRACT: "abstract" >
+| < BOOLEAN: "boolean" >
+| < BYTE: "byte" >
+| < CHAR: "char" >
+| < DOUBLE: "double" >
+| < EXTENDS: "extends" >
+| < FLOAT: "float" >
+| < INT: "int" >
+| < LONG: "long" >
+| < SHORT: "short" >
+| < THIS: "this" >
+| < VOID: "void" >
+| < END: "end">
+
+}
+
+
+
+/* LITERALS */
+
+<DEFAULT>
+TOKEN :
+{
+  < UNIT: "()" >
+| < FALSE: "false" >
+| < TRUE: "true" >
+
+|  < NUMBER_LITERAL:
+      <INTEGER_LITERAL>
+    | <FLOATING_POINT_LITERAL>
+  >
+|
+  < #INTEGER_LITERAL: ["1"-"9"] (["0"-"9"])* >
+|
+  < #FLOATING_POINT_LITERAL:
+        (["0"-"9"])+ "." (["0"-"9"])* (<DECIMAL_EXPONENT>)?
+      | "." (["0"-"9"])+ (<DECIMAL_EXPONENT>)? 
+      | (["0"-"9"])+ <DECIMAL_EXPONENT> 
+  >
+|
+  < #DECIMAL_EXPONENT: ["e","E"] (["+","-"])? (["0"-"9"])+ >
+
+|
+  < STRING_LITERAL:
+      "\""
+      (   (~["\"","\\","\n","\r"])
+        | ("\\"
+            ( ["n","t","b","r","f","(","\\","'","\""]
+            | ["0"-"7"] ( ["0"-"7"] )?
+            | ["0"-"3"] ["0"-"7"] ["0"-"7"]
+            )
+          )
+      )*
+      "\""
+  >
+}
+
+/* IDENTIFIERS */
+
+<DEFAULT>
+TOKEN :
+{
+  < IDENTIFIER: <LETTER> (<PART_LETTER>)* >
+|
+  < #LETTER: ["a"-"z","A"-"Z","_","?"] >
+|
+  < #PART_LETTER: ["a"-"z","A"-"Z","0"-"9","_","?"] >
+
+}
+
+/* SEPARATORS */
+
+<DEFAULT>
+TOKEN :
+{
+  < LPAREN: "(" >
+| < RPAREN: ")" >
+| < LBRACE: "{" >
+| < RBRACE: "}" >
+| < LBRACKET: "[" >
+| < RBRACKET: "]" >
+| < SEMICOLON: ";" >
+| < COMMA: "," >
+| < DOT: "." >
+| < AT: "@" >
+}
+
+/* OPERATORS */
+
+<DEFAULT>
+TOKEN :
+{
+  < ASSIGN: "=" >
+| < LT: "<" >
+| < BANG: "!" >
+| < COLON: ":" >
+| < EQ: "==" >
+| < SC_OR: "||" >
+| < SC_AND: "&&" >
+| < PLUS: "+" >
+| < MINUS: "-" >
+| < STAR: "*" >
+| < SLASH: "/" >
+| < BIT_AND: "&" >
+| < BIT_OR: "|" >
+| < XOR: "^" >
+| < REM: "%" >
+| < ELLIPSIS: ".." >
+}
+
+<DEFAULT>
+TOKEN :
+{
+< UNEXPECTED_CHAR : ~[] >
+}
+

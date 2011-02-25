@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+OpenIDE-Module: org.nbyeti
+OpenIDE-Module-Layer: org/nbyeti/layer.xml
+OpenIDE-Module-Localizing-Bundle: org/nbyeti/Bundle.properties
+OpenIDE-Module-Specification-Version: 1.0
+

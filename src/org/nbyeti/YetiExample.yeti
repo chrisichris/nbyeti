@@ -1,0 +1,27 @@
+module org.nbyeti.yetiexample
+
+foo = 1 + 1;
+
+/* Multiline
+   Comment
+   on three lines */
+
+class FooCl extends java.lang.Object
+
+   void do(int x)
+     return 2,
+end;
+
+{
+  //Single line comment
+  sff = do x: println x done,
+
+  foo2 x = add (x + 4.5) ( x * 3),
+
+  foo3 x y = (
+    if x == y then
+       print "X and Y are the same"
+    else
+       print 'hier \geht" ' ^ false
+    fi
+}
