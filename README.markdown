@@ -1,10 +1,13 @@
 Welcome to the yeti netbeans plugin
 ===================================
 
-This is a very simple plugin for the Netbeans to code-higlight yeti files and find matching braces.
+This is a very simple plugin for Netbeans to code-higlight yeti files and find matching braces.
 
 That's not a lot but code-higlighting and matching braces already helps quite a bit and because it is so simple it does not always throw exceptions like 
 some other much more ambitioned editors for other languages.
+
+There is on purpose not yeti-project provided, because it is much better if you create a maven project with the yeti-maven-plugin and use that.
+See [https://github.com/chrisichris/yeti-maven-plugin](https://github.com/chrisichris/yeti-maven-plugin) 
 
 It is tested on Netbeans 6.8
 
