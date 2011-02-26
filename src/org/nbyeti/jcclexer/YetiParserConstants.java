@@ -29,62 +29,64 @@ public interface YetiParserConstants {
   int INSTANCEOF = 23;
   int NEW = 24;
   int WITH = 25;
-  int TYPEDESC = 26;
+  int TYPEDEF = 26;
   int SYNCHRONIZED = 27;
   int IMPORT = 28;
-  int MODULE = 29;
-  int CLASS = 30;
-  int ABSTRACT = 31;
-  int BOOLEAN = 32;
-  int BYTE = 33;
-  int CHAR = 34;
-  int DOUBLE = 35;
-  int EXTENDS = 36;
-  int FLOAT = 37;
-  int INT = 38;
-  int LONG = 39;
-  int SHORT = 40;
-  int THIS = 41;
-  int VOID = 42;
-  int END = 43;
-  int UNIT = 44;
-  int FALSE = 45;
-  int TRUE = 46;
-  int NUMBER_LITERAL = 47;
-  int INTEGER_LITERAL = 48;
-  int FLOATING_POINT_LITERAL = 49;
-  int DECIMAL_EXPONENT = 50;
-  int STRING_LITERAL = 51;
-  int IDENTIFIER = 52;
-  int LETTER = 53;
-  int PART_LETTER = 54;
-  int LPAREN = 55;
-  int RPAREN = 56;
-  int LBRACE = 57;
-  int RBRACE = 58;
-  int LBRACKET = 59;
-  int RBRACKET = 60;
-  int SEMICOLON = 61;
-  int COMMA = 62;
-  int DOT = 63;
-  int AT = 64;
-  int ASSIGN = 65;
-  int LT = 66;
-  int BANG = 67;
-  int COLON = 68;
-  int EQ = 69;
-  int SC_OR = 70;
-  int SC_AND = 71;
-  int PLUS = 72;
-  int MINUS = 73;
-  int STAR = 74;
-  int SLASH = 75;
-  int BIT_AND = 76;
-  int BIT_OR = 77;
-  int XOR = 78;
-  int REM = 79;
-  int ELLIPSIS = 80;
-  int UNEXPECTED_CHAR = 81;
+  int LOAD = 29;
+  int PROGRAM = 30;
+  int MODULE = 31;
+  int CLASS = 32;
+  int ABSTRACT = 33;
+  int BOOLEAN = 34;
+  int BYTE = 35;
+  int CHAR = 36;
+  int DOUBLE = 37;
+  int EXTENDS = 38;
+  int FLOAT = 39;
+  int INT = 40;
+  int LONG = 41;
+  int SHORT = 42;
+  int THIS = 43;
+  int VOID = 44;
+  int END = 45;
+  int UNIT = 46;
+  int FALSE = 47;
+  int TRUE = 48;
+  int NUMBER_LITERAL = 49;
+  int INTEGER_LITERAL = 50;
+  int FLOATING_POINT_LITERAL = 51;
+  int DECIMAL_EXPONENT = 52;
+  int STRING_LITERAL = 53;
+  int IDENTIFIER = 54;
+  int LETTER = 55;
+  int PART_LETTER = 56;
+  int LPAREN = 57;
+  int RPAREN = 58;
+  int LBRACE = 59;
+  int RBRACE = 60;
+  int LBRACKET = 61;
+  int RBRACKET = 62;
+  int SEMICOLON = 63;
+  int COMMA = 64;
+  int DOT = 65;
+  int AT = 66;
+  int ASSIGN = 67;
+  int LT = 68;
+  int BANG = 69;
+  int COLON = 70;
+  int EQ = 71;
+  int SC_OR = 72;
+  int SC_AND = 73;
+  int PLUS = 74;
+  int MINUS = 75;
+  int STAR = 76;
+  int SLASH = 77;
+  int BIT_AND = 78;
+  int BIT_OR = 79;
+  int XOR = 80;
+  int REM = 81;
+  int ELLIPSIS = 82;
+  int UNEXPECTED_CHAR = 83;
 
   int DEFAULT = 0;
 
@@ -115,9 +117,11 @@ public interface YetiParserConstants {
     "\"instanceof\"",
     "\"new\"",
     "\"with\"",
-    "\"typedesc\"",
+    "\"typedef\"",
     "\"synchronized\"",
     "\"import\"",
+    "\"load\"",
+    "\"program\"",
     "\"module\"",
     "\"class\"",
     "\"abstract\"",

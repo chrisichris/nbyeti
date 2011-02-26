@@ -97,7 +97,7 @@ TOKEN :
 
 | < NEW: "new" >
 | < WITH: "with" >
-| < TYPEDESC: "typedesc" >
+| < TYPEDEF: "typedef" >
 | < SYNCHRONIZED: "synchronized" >
 }
 
@@ -109,6 +109,8 @@ TOKEN :
 {
 
   < IMPORT: "import" >
+| < LOAD: "load" >
+| < PROGRAM: "program" >
 | < MODULE: "module" >
 
 | < CLASS: "class" >
